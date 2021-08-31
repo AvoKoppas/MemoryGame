@@ -4,7 +4,6 @@ import android.os.CountDownTimer
 import androidx.lifecycle.ViewModel
 import com.testdevlab.memorygame.App
 import com.testdevlab.memorygame.common.MAX_GAME_TIME
-import com.testdevlab.memorygame.common.PIECE_COUNT
 import com.testdevlab.memorygame.repository.GameRepository
 import com.testdevlab.memorygame.repository.models.GamePiece
 import com.testdevlab.memorygame.common.*
@@ -57,11 +56,10 @@ class GameViewModel : ViewModel() {
         repository.insertHighScore(HighScoreModel(id, date, score))
     }
 
-    fun startGame() {
+    fun startGame(pieceCount: Int) {
         _onGameOver.resetReplayCache()
-
         val pieces = mutableListOf<GamePiece>()
-        (1..PIECE_COUNT).forEach { number ->
+        (1..pieceCount).forEach { number ->
             pieces.add(GamePiece(number))
         }
         pieces.shuffle()

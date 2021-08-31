@@ -13,7 +13,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/game_piece"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         app:cardCornerRadius="8dp"
@@ -21,11 +21,13 @@
         tools:cardBackgroundColor="@color/piece_idle">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="41dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
             android:layout_margin="16dp"
             android:fontFamily="sans-serif-medium"
             android:text="@{item.valueString}"
+            android:textAlignment="gravity"
             android:textColor="@color/black"
             android:textSize="22sp"
             tools:text="25" />

@@ -10,8 +10,16 @@
         android:name="com.testdevlab.memorygame.ui.menu.MenuFragment" />
 
     <fragment
-        android:id="@+id/navigation_game"
-        android:name="com.testdevlab.memorygame.ui.game.GameFragment" />
+        android:id="@+id/navigation_easy"
+        android:name="com.testdevlab.memorygame.ui.game.EasyGameFragment" />
+
+    <fragment
+        android:id="@+id/navigation_medium"
+        android:name="com.testdevlab.memorygame.ui.game.MediumGameFragment" />
+
+    <fragment
+        android:id="@+id/navigation_hard"
+        android:name="com.testdevlab.memorygame.ui.game.HardGameFragment" />
 
     <fragment
         android:id="@+id/navigation_high_scores"

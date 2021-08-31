@@ -5,9 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout.HORIZONTAL
+import android.widget.GridLayout.VERTICAL
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.room.util.TableInfo
 import com.testdevlab.memorygame.databinding.FragmentGameBinding
 import com.testdevlab.memorygame.ui.GameViewModel
 import com.testdevlab.memorygame.R
@@ -16,7 +20,7 @@ import com.testdevlab.memorygame.common.openFragment
 import kotlinx.coroutines.flow.collect
 import timber.log.Timber
 
-class GameFragment : Fragment() {
+class EasyGameFragment : Fragment() {
     private lateinit var binding: FragmentGameBinding
 
     private val viewModel by activityViewModels<GameViewModel>()
@@ -39,10 +43,10 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.gameGrid.adapter = adapter
-        binding.gameGrid.layoutManager = GridLayoutManager(requireContext(), 5)
-        viewModel.startGame()
+        binding.gameGrid.layoutManager =
+            GridLayoutManager(requireContext(), 2, RecyclerView.VERTICAL, false)
+        viewModel.startGame(4)
 
         launchMain {
             viewModel.gameTimer.collect { time ->
@@ -59,7 +63,7 @@ class GameFragment : Fragment() {
             viewModel.onGameOver.collect { time ->
                 AlertDialog.Builder(context)
                     .setMessage(getString(R.string.game_over_template, time))
-                    .setPositiveButton("Ok"){popup, _->
+                    .setPositiveButton("Ok") { popup, _ ->
                         popup.dismiss()
                         openFragment(R.id.navigation_menu)
                     }
@@ -70,7 +74,7 @@ class GameFragment : Fragment() {
 
         launchMain {
             viewModel.nextButton.collect { nextButton ->
-                binding.nextGamePiece.text = getString(R.string.next_button_template, nextButton)
+                binding.score.text = getString(R.string.next_button_template, nextButton)
             }
         }
     }

@@ -6,4 +6,7 @@
     <string name="no_high_scores">There are no high scores</string>
     <string name="next_button_template">Next button: %1$d</string>
     <string name="game_over_template">Game over on : %1$s</string>
+    <string name="easy">Easy</string>
+    <string name="medium">medium</string>
+    <string name="hard">hard</string>
 </resources>

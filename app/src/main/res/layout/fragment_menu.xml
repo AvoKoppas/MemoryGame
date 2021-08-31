@@ -1,33 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/start_new_game"
+        android:id="@+id/easy"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_height="48dp"
-        android:text="@string/new_game"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/easy"
+        app:iconPadding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/hard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/show_high_scores" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="452dp"
+        android:text="@string/medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/easy"
+        app:layout_constraintVertical_bias="0.808" />
+
+    <Button
+        android:id="@+id/hard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="352dp"
+        android:text="@string/hard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/medium"
+        app:layout_constraintVertical_bias="0.53" />
 
     <Button
         android:id="@+id/show_high_scores"
         android:layout_width="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/high_scores"
-        app:layout_constraintTop_toBottomOf="@id/start_new_game"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hard"
+        app:layout_constraintVertical_bias="0.203" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

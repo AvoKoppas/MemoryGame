@@ -24,8 +24,14 @@ class MenuFragment : Fragment () {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.startNewGame.setOnClickListener {
-            openFragment(R.id.navigation_game)
+        binding.easy.setOnClickListener {
+            openFragment(R.id.navigation_easy)
+        }
+        binding.medium.setOnClickListener {
+            openFragment(R.id.navigation_medium)
+        }
+        binding.hard.setOnClickListener {
+            openFragment(R.id.navigation_hard)
         }
         binding.showHighScores.setOnClickListener {
             openFragment(R.id.navigation_high_scores)
